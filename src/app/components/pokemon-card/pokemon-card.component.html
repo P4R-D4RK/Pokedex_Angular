@@ -2,8 +2,8 @@
     <img src="./../../../assets/img/flecha.png" alt="" id="arrow">
     <div id="card">
         <div id="circle"></div>
-        <img src="" alt="">
-        <span>No. 001</span>
-        <span>Charmander</span>
+        <img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/{{id}}.png' alt="">
+        <span>No. {{id}}</span>
+        <span *ngIf="data">{{data.name | titlecase}}</span>
     </div>
 </div>
