@@ -38,6 +38,7 @@ app-pokemon-photo{
     gap: 5px;
     max-height: 100%;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 #spinner {

@@ -16,6 +16,7 @@
 }
 
 #arrow {
+    position: absolute;
     height: 20px;
     padding: 0 10px;
 }
@@ -25,10 +26,11 @@
     align-items: center;
     background-color: #fceab8;
     border-radius: 25px 5px 5px 25px;
-    width: 100%;
+    width: 90%;
     font-size: larger;
     padding-left: 5px;
-    gap: 1rem
+    margin-left: 30px;
+    gap: 1rem;
 }
 
 #circle {
