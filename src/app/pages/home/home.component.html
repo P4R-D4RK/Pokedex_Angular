@@ -1,7 +1,6 @@
 <main id="container">
-  <app-pokemon-photo
-  [pokemon]="selectedPokemon"
-  ></app-pokemon-photo>
+  <app-detail [pokemon]="selectedPokemon"></app-detail>
+  <app-pokemon-photo [pokemon]="selectedPokemon"></app-pokemon-photo>
   <div id="cardsContainer" #cards (scroll)="onScroll($event)">
     <app-pokemon-card
       *ngFor="let pokemon of pokemonList"
@@ -9,6 +8,11 @@
       [selected]="pokemon.name === selectedPokemon?.name"
       (clicked)="clickedCard($event)"
     ></app-pokemon-card>
-    <img src="./../../../assets/img/spinner.svg" alt="Cargando" id="spinner" *ngIf="loading">
+    <img
+      src="./../../../assets/img/spinner.svg"
+      alt="Cargando"
+      id="spinner"
+      *ngIf="loading"
+    />
   </div>
 </main>

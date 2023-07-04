@@ -1,15 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Pokemon } from 'src/app/interfaces/pokemon.interface';
+import { PokemonService } from 'src/app/services/pokemon.service';
 
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
-  styleUrls: ['./detail.component.scss']
+  styleUrls: ['./detail.component.scss'],
 })
 export class DetailComponent implements OnInit {
+  @Input() pokemon?: Pokemon;
+  description: string = '';
 
-  constructor() { }
+  constructor(private pokemonService: PokemonService) {}
 
-  ngOnInit(): void {
+  ngOnChanges(): void {
+    if (this.pokemon) {
+      this.pokemonService.getDescription(this.pokemon?.id).then((res) => {
+        this.description = res;
+        // console.log(res);
+      });
+    }
   }
 
+  ngOnInit(): void {}
 }

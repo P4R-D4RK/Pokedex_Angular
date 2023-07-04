@@ -18,13 +18,16 @@ export class PokemonService {
     return [];
   }
 
- async  getById(id: string):Promise<Pokemon> {
+ async getById(id: string):Promise<Pokemon> {
     const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
     return await res.json()
   }
 
-  getDescription() {
-
+  async getDescription(id: string | number):Promise<string> {
+    const res = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`)
+    const resJson = await res.json();
+    const text = resJson.flavor_text_entries.find((text:any) =>  text.language.name === "es")
+    return text ? text.flavor_text : "No se econtró descripción en español";
   }
 
 }

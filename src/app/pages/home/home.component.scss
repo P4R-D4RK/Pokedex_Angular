@@ -30,6 +30,12 @@
 
 app-pokemon-photo{
     margin-left: 100px;
+    z-index: 2;
+}
+
+app-detail{
+    position: absolute;
+    z-index: 1;
 }
 
 #cardsContainer {
