@@ -1,6 +1,14 @@
 <main id="container">
-  <app-detail [pokemon]="selectedPokemon"></app-detail>
-  <app-pokemon-photo [pokemon]="selectedPokemon"></app-pokemon-photo>
+  <app-detail
+    [pokemon]="selectedPokemon"
+    (clicked)="changeDetailState()"
+    [open]="detail"
+    [ngClass]="{ open: detail }"
+  ></app-detail>
+  <app-pokemon-photo
+    [pokemon]="selectedPokemon"
+    [ngClass]="{ open: detail }"
+  ></app-pokemon-photo>
   <div id="cardsContainer" #cards (scroll)="onScroll($event)">
     <app-pokemon-card
       *ngFor="let pokemon of pokemonList"

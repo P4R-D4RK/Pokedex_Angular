@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, EventEmitter, OnInit, Input, Output } from '@angular/core';
 import { Pokemon } from 'src/app/interfaces/pokemon.interface';
 import { PokemonService } from 'src/app/services/pokemon.service';
 
@@ -9,6 +9,8 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 })
 export class DetailComponent implements OnInit {
   @Input() pokemon?: Pokemon;
+  @Input() open?: boolean = false;
+  @Output() clicked = new EventEmitter();
   description: string = '';
 
   constructor(private pokemonService: PokemonService) {}

@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
   page: number = 1;
   loading: boolean = false;
   selectedPokemon?: Pokemon;
+  detail: boolean = false;
 
   ngOnInit(): void {
     this.loadList();
@@ -45,6 +46,11 @@ export class HomeComponent implements OnInit {
 
   async clickedCard(id: string) {
     this.selectedPokemon = await this.pokemonService.getById(id)
+  }
+
+  changeDetailState() {
+    if(this.selectedPokemon) this.detail = !this.detail;
+    console.log(this.detail);
   }
 
 }
