@@ -1,8 +1,8 @@
-<div id="backdrop" [ngClass]="{hidden: !open}" (click)="clicked.emit()"></div>
+<div id="backdrop" [ngClass]="{ hidden: !open }" (click)="clicked.emit()"></div>
 <div id="container">
   <div id="data">
     <div class="area">
-      <app-pokemon-card [fullData]="pokemon"></app-pokemon-card>
+      <app-pokemon-card [fullData]="pokemon" [selected]="true"></app-pokemon-card>
     </div>
     <div class="area">
       <p>
@@ -23,6 +23,10 @@
     </div>
   </div>
   <button (click)="clicked.emit()">
-    <img src="../../../assets/img/flecha.png" alt="" [ngClass]="{rotate: open}">
+    <img
+      src="../../../assets/img/flecha.png"
+      alt=""
+      [ngClass]="{ rotate: open }"
+    />
   </button>
 </div>

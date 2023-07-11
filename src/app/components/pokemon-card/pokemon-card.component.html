@@ -1,6 +1,6 @@
 <div id="container" [ngClass]="{selected: selected}">
     <img *ngIf="selected" src="./../../../assets/img/flecha.png" alt="" id="arrow">
-    <div id="card" (click)="clicked.emit(id)">
+    <div id="card" (click)="clicked.emit(id)" [ngClass]="{selected: selected}">
         <div id="circle"></div>
         <img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{id}}.png' alt="">
         <span>No. {{id}}</span>
